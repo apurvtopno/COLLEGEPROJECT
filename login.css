@@ -1,0 +1,146 @@
+/* General reset for the page */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #6e7f94, #3f5462); /* Subtle gradient background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #fff;
+}
+
+/* Container for the login/signup forms */
+.container {
+    background: #fff;
+    width: 380px;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    background: linear-gradient(135deg, #7D91A3, #f2f2f2); /* Soft gradient for container */
+}
+
+/* Heading styles */
+h2 {
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Form label styles */
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    text-align: left;
+    color: #555;
+}
+
+/* Input field and select styles */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+select {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+    background-color: #f7f7f7;
+    transition: all 0.3s ease;
+}
+
+/* Focus effect on input fields */
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+select:focus {
+    border-color: #4A90E2;
+    background-color: #fff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(74, 144, 226, 0.7);
+}
+
+/* Button styles */
+button {
+    width: 100%;
+    padding: 14px;
+    background-color: #4A90E2;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    box-shadow: 0 5px 15px rgba(74, 144, 226, 0.3);
+}
+
+button:hover {
+    background-color: #357ABD;
+    box-shadow: 0 5px 20px rgba(74, 144, 226, 0.5);
+}
+
+/* Links (for switching between login/signup forms) */
+a {
+    color: #4A90E2;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+    color: #357ABD;
+}
+
+/* Animation for toggling forms */
+#login-form,
+#signup-form {
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeInUp 0.5s forwards;
+}
+
+#login-form.show,
+#signup-form.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Add a subtle hover effect to the forms */
+.container:hover {
+    transform: scale(1.02);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive design */
+@media (max-width: 400px) {
+    .container {
+        width: 100%;
+        padding: 25px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+}

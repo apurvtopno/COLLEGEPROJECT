@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supervisor Dashboard - Coal Management</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="supervisor.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Supervisor Dashboard</h1>
+        </header>
+
+        <div class="dashboard-content">
+            <!-- Team Management Section -->
+            <section class="team-management">
+                <h2>Create and Manage Teams</h2>
+                <form id="createTeamForm">
+                    <div class="form-group">
+                        <label for="team-name">Team Name:</label>
+                        <input type="text" id="team-name" name="team-name" required placeholder="Enter team name">
+                    </div>
+                    <div class="form-group">
+                        <label for="team-leader">Team Leader (Batch Number):</label>
+                        <input type="text" id="team-leader" name="team-leader" required placeholder="Enter leader batch number">
+                    </div>
+                    <div class="form-group">
+                        <label for="team-members">Team Members:</label>
+                        <select id="team-members" name="team-members[]" multiple="multiple" required>
+                            <!-- Placeholder for workers to select -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="submit-btn">Create Team</button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Created Teams Display Section -->
+            <section class="created-teams">
+                <h2>Created Teams</h2>
+                <div id="team-list">
+                    <!-- Created teams will be displayed here -->
+                </div>
+            </section>
+
+            <!-- Worker Management Section -->
+            <section class="worker-management">
+                <h2>Assign Work to Workers</h2>
+                <form id="assignWorkForm">
+                    <div class="form-group">
+                        <label for="worker-batch">Worker Batch Number:</label>
+                        <input type="text" id="worker-batch" name="worker-batch" required placeholder="Enter worker batch number">
+                    </div>
+                    <div class="form-group">
+                        <label for="start-time">Start Time:</label>
+                        <input type="time" id="start-time" name="start-time" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="end-time">End Time:</label>
+                        <input type="time" id="end-time" name="end-time" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="area">Area:</label>
+                        <input type="text" id="area" name="area" required placeholder="Enter task area">
+                    </div>
+                    <div class="form-group">
+                        <label for="score">Score:</label>
+                        <input type="number" id="score" name="score" required placeholder="Enter worker's score">
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="submit-btn">Assign Task</button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Workers Table Section -->
+            <section class="workers-table">
+                <h2>Worker's Task Performance</h2>
+                <table id="workers-table">
+                    <thead>
+                        <tr>
+                            <th>Batch Number</th>
+                            <th>Start Time</th>
+                            <th>End Time</th>
+                            <th>Area</th>
+                            <th>Score</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Worker data will be populated here -->
+                    </tbody>
+                </table>
+            </section>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 CoalMaster Inc. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+    <script src="supervisor.js"></script>
+</body>
+</html>

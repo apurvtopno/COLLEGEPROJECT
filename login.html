@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="login.css"> <!-- Linking CSS -->
+</head>
+<body>
+
+<div class="container">
+    <!-- Login Form -->
+    <div id="login-form" class="show">
+        <h2>Login</h2>
+        <form action="/login" method="POST">
+            <label for="login-username">Username:</label>
+            <input type="text" id="login-username" name="username" required placeholder="Enter your username">
+            
+            <label for="login-password">Password:</label>
+            <input type="password" id="login-password" name="password" required placeholder="Enter your password">
+            
+            <label for="login-role">Role:</label>
+            <select id="login-role" name="role" required>
+                <option value="">Select your role</option>
+                <option value="admin">Admin</option>
+                <option value="worker">Worker</option>
+                <option value="supervisor">Supervisor</option>
+                <option value="operator">Operator</option>
+                <option value="manager">Manager</option>
+            </select>
+            
+            <button type="submit">Login</button>
+        </form>
+        <p>Don't have an account? <a href="javascript:void(0);" onclick="toggleForm('signup')">Sign up here</a></p>
+    </div>
+
+    <!-- Signup Form -->
+    <div id="signup-form" style="display: none;">
+        <h2>Sign Up</h2>
+        <form action="/signup" method="POST">
+            <label for="signup-username">Username:</label>
+            <input type="text" id="signup-username" name="username" required placeholder="Choose a username">
+            
+            <label for="signup-email">Email:</label>
+            <input type="email" id="signup-email" name="email" required placeholder="Enter your email">
+            
+            <label for="signup-password">Password:</label>
+            <input type="password" id="signup-password" name="password" required placeholder="Create a password">
+            
+            <label for="confirm-password">Confirm Password:</label>
+            <input type="password" id="confirm-password" name="confirm-password" required placeholder="Confirm your password">
+            
+            <button type="submit">Sign Up</button>
+        </form>
+        <p>Already have an account? <a href="javascript:void(0);" onclick="toggleForm('login')">Login here</a></p>
+    </div>
+</div>
+
+<script>
+    // Function to toggle between login and signup forms
+    function toggleForm(formType) {
+        if (formType === 'login') {
+            document.getElementById('signup-form').style.display = 'none';
+            document.getElementById('login-form').style.display = 'block';
+        } else {
+            document.getElementById('login-form').style.display = 'none';
+            document.getElementById('signup-form').style.display = 'block';
+        }
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manager Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css"> <!-- Link your CSS -->
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <h1>Manager Dashboard</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#production">Production</a></li>
+                <li><a href="#equipment">Equipment</a></li>
+                <li><a href="#workforce">Workforce</a></li>
+                <li><a href="#safety">Safety</a></li>
+                <li><a href="#finance">Finance</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Production Section -->
+        <section id="production" class="section">
+            <h2>Production Tracking</h2>
+            <form class="form">
+                <div class="form-group">
+                    <label for="production-rate">Production Rate (Tons per Day):</label>
+                    <input type="number" id="production-rate" name="production-rate" placeholder="Enter daily production rate" required>
+                </div>
+                <div class="form-group">
+                    <label for="production-target">Production Target (Tons):</label>
+                    <input type="number" id="production-target" name="production-target" placeholder="Set production target" required>
+                </div>
+                <button type="submit">Update Production</button>
+            </form>
+        </section>
+
+        <!-- Equipment Management Section -->
+        <section id="equipment" class="section">
+            <h2>Equipment Management</h2>
+            <form class="form">
+                <div class="form-group">
+                    <label for="equipment-status">Equipment Status:</label>
+                    <select id="equipment-status" name="equipment-status">
+                        <option value="operational">Operational</option>
+                        <option value="under-maintenance">Under Maintenance</option>
+                        <option value="out-of-service">Out of Service</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="maintenance-schedule">Maintenance Schedule:</label>
+                    <input type="date" id="maintenance-schedule" name="maintenance-schedule">
+                </div>
+                <div class="form-group">
+                    <label for="repair-logs">Repair Log Entry:</label>
+                    <textarea id="repair-logs" name="repair-logs" rows="4" placeholder="Enter repair details"></textarea>
+                </div>
+                <button type="submit">Update Equipment</button>
+            </form>
+        </section>
+
+        <!-- Workforce Management Section -->
+        <section id="workforce" class="section">
+            <h2>Workforce Scheduling</h2>
+            <form class="form">
+                <div class="form-group">
+                    <label for="worker-name">Worker Name:</label>
+                    <input type="text" id="worker-name" name="worker-name" placeholder="Enter worker's name" required>
+                </div>
+                <div class="form-group">
+                    <label for="shift-time">Shift Time:</label>
+                    <input type="time" id="shift-time" name="shift-time">
+                </div>
+                <div class="form-group">
+                    <label for="worker-status">Worker Status:</label>
+                    <select id="worker-status" name="worker-status">
+                        <option value="active">Active</option>
+                        <option value="off-duty">Off Duty</option>
+                        <option value="on-leave">On Leave</option>
+                    </select>
+                </div>
+                <button type="submit">Update Worker Schedule</button>
+            </form>
+        </section>
+
+        <!-- Safety Section -->
+        <section id="safety" class="section">
+            <h2>Safety Incident Reporting</h2>
+            <form class="form">
+                <div class="form-group">
+                    <label for="incident-description">Incident Description:</label>
+                    <textarea id="incident-description" name="incident-description" rows="4" placeholder="Describe the safety incident"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="incident-type">Incident Type:</label>
+                    <select id="incident-type" name="incident-type">
+                        <option value="accident">Accident</option>
+                        <option value="hazard">Hazard</option>
+                        <option value="near-miss">Near Miss</option>
+                    </select>
+                </div>
+                <button type="submit">Report Incident</button>
+            </form>
+        </section>
+
+        <!-- Finance Section -->
+        <section id="finance" class="section">
+            <h2>Finance & Budgeting</h2>
+            <form class="form">
+                <div class="form-group">
+                    <label for="budget">Set Budget ($):</label>
+                    <input type="number" id="budget" name="budget" placeholder="Enter budget amount" required>
+                </div>
+                <div class="form-group">
+                    <label for="costs">Enter Operational Costs ($):</label>
+                    <input type="number" id="costs" name="costs" placeholder="Enter operational costs" required>
+                </div>
+                <button type="submit">Update Financial Data</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Mining Manager Dashboard. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

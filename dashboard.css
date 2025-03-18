@@ -1,0 +1,245 @@
+/* General reset and styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f9fafb; /* Soft off-white background */
+    color: #2c3e50; /* Dark grayish-blue text */
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header Styling */
+header {
+    background: linear-gradient(135deg, #8e44ad, #9b59b6); /* Elegant purple gradient */
+    color: white;
+    padding: 50px 0;
+    text-align: center;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    border-bottom: 4px solid #8e44ad; /* Deep purple line for separation */
+}
+
+header .logo h1 {
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header p {
+    font-size: 18px;
+    font-weight: 500;
+    color: #ecf0f1; /* Light gray for contrast */
+    margin-top: 10px;
+    text-transform: capitalize;
+}
+
+header nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    list-style: none;
+    margin-top: 20px;
+}
+
+header nav ul li {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease, letter-spacing 0.3s ease;
+    font-size: 16px;
+}
+
+header nav ul li a:hover {
+    background-color: #8e44ad;
+    transform: translateY(-4px);
+    letter-spacing: 1px;
+}
+
+/* Main Content Styling */
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+    padding: 40px;
+    flex-grow: 1;
+}
+
+@media (max-width: 1200px) {
+    main {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    main {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+}
+
+/* Section Styles (Cards for each area) */
+.section {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.section:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+    background-color: #f5f5f5; /* Soft gray background on hover */
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #2c3e50;
+    font-weight: 700;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #34495e;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 14px;
+    font-size: 15px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    background-color: #f9fafb;
+    margin-top: 8px;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #8e44ad;
+    outline: none;
+    background-color: #f3e6f5; /* Lighter shade of purple when focused */
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+button {
+    width: 100%;
+    padding: 16px;
+    background-color: #8e44ad;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 17px;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+    background-color: #9b59b6;
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer Styling */
+footer {
+    background-color: #2c3e50;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 16px;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+    margin-top: auto;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Utility Classes for Spacing */
+.spacing-small {
+    margin-bottom: 12px;
+}
+
+.spacing-medium {
+    margin-bottom: 25px;
+}
+
+.spacing-large {
+    margin-bottom: 50px;
+}
+
+/* Responsive Enhancements */
+@media (max-width: 768px) {
+    header .logo h1 {
+        font-size: 30px;
+    }
+
+    header nav ul {
+        flex-direction: column;
+    }
+
+    header nav ul li {
+        margin-bottom: 12px;
+    }
+
+    header nav ul li a {
+        font-size: 16px;
+    }
+}
+
+/* Scrollbar Customization */
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #8e44ad;
+    border-radius: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #f9fafb;
+}
+
+/* Hover Effects for Interactive Items */
+button:hover {
+    background-color: #9b59b6;
+    transform: translateY(-5px);
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: #8e44ad;
+    box-shadow: 0 0 5px rgba(142, 68, 173, 0.5);
+}

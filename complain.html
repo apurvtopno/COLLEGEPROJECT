@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complaint Registration</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="complain.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Complaint Registration</h1>
+            <p>Please register your complaint by filling out the form below</p>
+        </header>
+
+        <section class="complaint-form">
+            <form id="complaintForm">
+                <div class="form-group">
+                    <label for="name">Your Name:</label>
+                    <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                </div>
+                <div class="form-group">
+                    <label for="batch_number">Batch Number:</label>
+                    <input type="text" id="batch_number" name="batch_number" required placeholder="Enter your batch number">
+                </div>
+                <div class="form-group">
+                    <label for="complain_against">Complain Against:</label>
+                    <select id="complain_against" name="complain_against" required>
+                        <option value="">Select a person</option>
+                        <!-- Example options -->
+                        <option value="1">John Doe - Badge #1234</option>
+                        <option value="2">Jane Smith - Badge #5678</option>
+                        <option value="3">Robert Brown - Badge #9101</option>
+                        <option value="4">Mary Johnson - Badge #1123</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="reason">Reason for Complaint:</label>
+                    <textarea id="reason" name="reason" required placeholder="Describe the reason for your complaint..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Submit Complaint</button>
+            </form>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 Complaint Register. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Form submission animation
+        const form = document.getElementById('complaintForm');
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Apply a success animation to the button
+            const submitBtn = document.querySelector('.submit-btn');
+            submitBtn.classList.add('loading');
+
+            setTimeout(function() {
+                submitBtn.classList.remove('loading');
+                alert('Thank you for submitting your complaint!');
+                form.reset(); // Reset the form after submission
+            }, 2000); // Simulate a delay before showing the success message
+        });
+    </script>
+</body>
+</html>
